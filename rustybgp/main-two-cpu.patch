@@ -1,0 +1,15 @@
+diff --git a/daemon/src/main.rs b/daemon/src/main.rs
+index 5dd3075..066d64b 100644
+--- a/daemon/src/main.rs
++++ b/daemon/src/main.rs
+@@ -30,8 +30,8 @@ use std::net::Ipv4Addr;
+ use std::str::FromStr;
+ 
+ fn main() -> Result<(), std::io::Error> {
+-    if num_cpus::get() < 4 {
+-        panic!("four local CPUs are necessary at least");
++    if num_cpus::get() < 2 {
++        panic!("two local CPUs are necessary at least");
+     }
+ 
+     let args = App::new("rustybgpd")
