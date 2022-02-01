@@ -8,7 +8,7 @@ We use a static record size of 4K. This gives a good balance of latency and
 throughput.
 
 Optimize latency:
-By initialy sending small (1 TCP segment) sized records, we are able to avoid
+By initially sending small (1 TCP segment) sized records, we are able to avoid
 HoL blocking of the first byte. This means TTFB is sometime lower by a whole
 RTT.
 

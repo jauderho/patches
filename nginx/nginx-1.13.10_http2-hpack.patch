@@ -487,7 +487,7 @@ diff -uNr a/src/http/v2/ngx_http_v2.h b/src/http/v2/ngx_http_v2.h
 +
 +    /* hash table for dynamic entries, instead using a generic hash table,
 +       which would be too slow to process a significant amount of headers,
-+       this table is not determenistic, and might ocasionally fail to insert
++       this table is not deterministic, and might occasionally fail to insert
 +       a value, at the cost of slightly worse compression, but significantly
 +       faster performance */
 +    ngx_http_v2_hpack_enc_entry_t    htable[HPACK_ENC_HTABLE_SZ];
