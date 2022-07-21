@@ -20,4 +20,4 @@ jobs:
         fetch-depth: 0
 
     - name: gitleaks-action
-      uses: zricethezav/gitleaks-action@42eafe5778bee6458d87a832256fd7f39be48397 # master
+      uses: zricethezav/gitleaks-action@8fe1d33dbcfa38223048888baa1c5e9ed5f2389d # master
