@@ -24,11 +24,11 @@ jobs:
           github.com:443
           gitlab.com:443
         
-    - uses: actions/checkout@v3 # v2
+    - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3
       with:
         fetch-depth: 0
         
-    - uses: jauderho/git-repo-sync@6142c9cd8960dadc57d1190506d6c35ac5cee660 # v0.1.0
+    - uses: jauderho/git-repo-sync@6142c9cd8960dadc57d1190506d6c35ac5cee660 # v0.2.0
       with:
         # Such as https://github.com/wangchucheng/git-repo-sync.git
         #target-url: ${{ secrets.GITLAB_URL }}
