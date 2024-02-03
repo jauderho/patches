@@ -1,0 +1,15 @@
+diff --git a/src/event/ngx_event_openssl.c b/src/event/ngx_event_openssl.c
+index 96f72b2..10a5a6f 100644
+--- a/src/event/ngx_event_openssl.c
++++ b/src/event/ngx_event_openssl.c
+@@ -398,6 +398,10 @@ ngx_ssl_create(ngx_ssl_t *ssl, ngx_uint_t protocols, void *data)
+     SSL_CTX_set_max_proto_version(ssl->ctx, TLS1_3_VERSION);
+ #endif
+ 
++#ifdef SSL_OP_PRIORITIZE_CHACHA
++    SSL_CTX_set_options(ssl->ctx, SSL_OP_PRIORITIZE_CHACHA);
++#endif
++
+ #ifdef SSL_OP_NO_COMPRESSION
+     SSL_CTX_set_options(ssl->ctx, SSL_OP_NO_COMPRESSION);
+ #endif
