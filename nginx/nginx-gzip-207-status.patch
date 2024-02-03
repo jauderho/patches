@@ -1,0 +1,26 @@
+diff --git a/src/http/modules/ngx_http_gzip_filter_module.c b/src/http/modules/ngx_http_gzip_filter_module.c
+index ed0de60..c3313ab 100644
+--- a/src/http/modules/ngx_http_gzip_filter_module.c
++++ b/src/http/modules/ngx_http_gzip_filter_module.c
+@@ -229,7 +229,8 @@ ngx_http_gzip_header_filter(ngx_http_request_t *r)
+     if (!conf->enable
+         || (r->headers_out.status != NGX_HTTP_OK
+             && r->headers_out.status != NGX_HTTP_FORBIDDEN
+-            && r->headers_out.status != NGX_HTTP_NOT_FOUND)
++            && r->headers_out.status != NGX_HTTP_NOT_FOUND
++            && r->headers_out.status != NGX_HTTP_MULTI_STATUS)
+         || (r->headers_out.content_encoding
+             && r->headers_out.content_encoding->value.len)
+         || (r->headers_out.content_length_n != -1
+diff --git a/src/http/ngx_http_request.h b/src/http/ngx_http_request.h
+index cc3b7c0..c6a3deb 100644
+--- a/src/http/ngx_http_request.h
++++ b/src/http/ngx_http_request.h
+@@ -80,6 +80,7 @@
+ #define NGX_HTTP_ACCEPTED                  202
+ #define NGX_HTTP_NO_CONTENT                204
+ #define NGX_HTTP_PARTIAL_CONTENT           206
++#define NGX_HTTP_MULTI_STATUS              207
+ 
+ #define NGX_HTTP_SPECIAL_RESPONSE          300
+ #define NGX_HTTP_MOVED_PERMANENTLY         301
